@@ -1,1 +1,541 @@
-/* No CSS *//*# sourceMappingURL=style.css.map */
+/*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
+html, body, p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset, legend, textarea, pre, iframe, hr, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+ul {
+  list-style: none;
+}
+
+button, input, select {
+  margin: 0;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+img, video {
+  height: auto;
+  max-width: 100%;
+}
+
+iframe {
+  border: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td, th {
+  padding: 0;
+}
+
+@font-face {
+  font-family: "shrikhand";
+  src: url(fonts/shrikhand/shrikhand-regular.ttf);
+}
+
+@font-face {
+  font-family: "roboto";
+  src: url(fonts/Roboto/Roboto-Regular.ttf);
+}
+
+@font-face {
+  font-family: "roboto-black";
+  src: url(fonts/Roboto/Roboto-Black.ttf);
+}
+
+body, header, main, section, footer {
+  max-width: 375px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "roboto";
+  z-index: 2;
+}
+
+h1, h3 {
+  font-family: "shrikhand";
+  font-size: 1.3em;
+}
+
+h2 {
+  font-family: "roboto";
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+i {
+  margin-right: 0.7em;
+}
+
+.button__fonction {
+  max-height: 70px;
+  height: 100%;
+  max-width: 326px;
+  margin-top: 20px;
+}
+
+header {
+  width: 375px;
+}
+
+.loading-spinner {
+  width: 100%;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  z-index: 9999;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-animation: transition 3s ease both;
+          animation: transition 3s ease both;
+}
+
+.loading-spinner .loader-quart {
+  border-radius: 50px;
+  border: 5px solid transparent;
+  display: inline-block;
+  position: relative;
+  right: 5px;
+  left: 5px;
+  top: 5px;
+  bottom: 5px;
+  border-radius: 50px;
+  width: 100px;
+  height: 100px;
+  border: 5px solid transparent;
+  border-top-color: #9356DC;
+  border-bottom-color: #9356DC;
+  -webkit-animation: spin 800ms linear infinite;
+  animation: spin 800ms linear infinite;
+}
+
+.loading-spinner .loader-quart:after {
+  content: '';
+  position: absolute;
+  right: 5px;
+  left: 5px;
+  top: 5px;
+  bottom: 5px;
+  border-radius: 50px;
+  border: 5px solid transparent;
+  border-right-color: #FF79DA;
+  border-left-color: #FF79DA;
+  -webkit-animation: spin-reverse 400ms linear infinite;
+  animation: spin-reverse 400ms linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes spin-reverse {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg);
+  }
+}
+
+@keyframes spin-reverse {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg);
+  }
+}
+
+@-webkit-keyframes transition {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes transition {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 60px;
+}
+
+.header h1 {
+  font-size: 30px;
+  font-weight: normal;
+}
+
+.localisation {
+  max-width: 375px;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #dddddd;
+  -webkit-box-shadow: inset 0 6px 9px -6px rgba(78, 75, 75, 0.5);
+          box-shadow: inset 0 6px 9px -6px rgba(78, 75, 75, 0.5);
+  color: #858282;
+}
+
+.presentation {
+  background-color: #F6F6F6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1.25em;
+  text-align: center;
+}
+
+.presentation h2 {
+  max-width: 280px;
+  margin-bottom: 20px;
+}
+
+.presentation .button__explore {
+  border-radius: 25px;
+  padding: 15px;
+  color: white;
+  font-size: 1em;
+  font-weight: 500;
+  margin: 20px;
+  background: linear-gradient(170deg, #FF79DA 6%, #9356DC 100%);
+  -webkit-box-shadow: 1px 1px 12px #dddddd;
+          box-shadow: 1px 1px 12px #dddddd;
+}
+
+.presentation .button__explore:hover {
+  opacity: 0.85;
+  -webkit-box-shadow: 1px 1px 12px #aaaaaa;
+          box-shadow: 1px 1px 12px #aaaaaa;
+}
+
+.fonctionnement {
+  padding: 60px 20px;
+}
+
+.fonctionnement h2 {
+  margin-bottom: 30px;
+}
+
+.button__number {
+  max-width: 12px;
+  max-height: 12px;
+  background: #9356DC;
+  color: white;
+  padding: 12px;
+  border-radius: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  z-index: 1;
+  margin-top: 25px;
+}
+
+.button__function {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 25px;
+  padding: 15px;
+  color: white;
+  font-size: 1em;
+  font-weight: 500;
+  margin: 20px;
+  background: linear-gradient(170deg, #F6F6F6 6%, white 100%);
+  -webkit-box-shadow: 1px 1px 12px #dddddd;
+          box-shadow: 1px 1px 12px #dddddd;
+  color: black;
+  margin: 0 0 30px 10px;
+  padding: 25px;
+  position: initial;
+}
+
+.button__function:hover {
+  background: 96.47059%;
+  -webkit-box-shadow: 1px 1px 12px #aaaaaa;
+          box-shadow: 1px 1px 12px #aaaaaa;
+}
+
+.button__function:hover i {
+  color: #9356DC;
+}
+
+.button__function i {
+  margin-left: 25px;
+  margin-right: 20px;
+  color: #858282;
+}
+
+.button__function p {
+  font-weight: bold;
+}
+
+.restaurants {
+  max-width: 375px;
+  width: 100%;
+  padding: 60px 20px;
+  background: #F6F6F6;
+}
+
+.restaurants a {
+  text-decoration: none;
+  color: black;
+}
+
+.bloc_restaurants {
+  margin-top: 30px;
+  max-width: 335px;
+  width: 100%;
+  max-height: 1060px;
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-row-gap: 20px;
+}
+
+.bloc_restaurants .vignette {
+  max-width: 335px;
+  max-height: 250px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+  -webkit-box-shadow: 1px 1px 12px #dddddd;
+          box-shadow: 1px 1px 12px #dddddd;
+  border-radius: 25px;
+  background: white;
+}
+
+.image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.image img {
+  max-width: 335px;
+  width: 335px;
+  max-height: 175px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  border-radius: 25px 25px 0 0;
+  z-index: 1;
+}
+
+.image .button_new {
+  width: 80px;
+  height: 30px;
+  position: absolute;
+  z-index: 2;
+  margin-left: 240px;
+  margin-top: 20px;
+  color: #278870;
+  background: #99E2D0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 0.9em;
+  font-weight: 500;
+  border-radius: 4px;
+}
+
+.description {
+  max-width: 375px;
+  width: 100%;
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 3fr 1fr;
+      grid-template-columns: 3fr 1fr;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+}
+
+.texte {
+  max-height: 75px;
+  margin-left: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+p {
+  margin: 0;
+}
+
+.nom {
+  font-weight: bold;
+}
+
+.coeur {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.coeur .button-coeur__vide {
+  font-size: 1.5em;
+}
+
+.coeur .button-coeur__vide:hover {
+  display: none;
+}
+
+.coeur .button-coeur__plein {
+  font-size: 1.5em;
+  background: #9356DC;
+  background: radial-gradient(circle at 30% 120%, #FF79DA 20%, #FF79DA 40%, #9356DC 70%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: none;
+}
+
+.coeur .button-coeur__plein:hover {
+  background: #9356DC;
+  background: radial-gradient(circle at 30% 120%, #FF79DA 20%, #FF79DA 40%, #9356DC 70%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: block;
+}
+
+.footer {
+  max-width: 375px;
+  background-color: #353535;
+  color: white;
+  padding: 1.5em;
+}
+
+.footer h3 {
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+
+.footer p {
+  line-height: 25px;
+  font-family: "roboto";
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.footer a {
+  text-decoration: none;
+  color: white;
+}
+/*# sourceMappingURL=style.css.map */
