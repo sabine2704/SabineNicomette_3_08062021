@@ -166,50 +166,34 @@ p{
 .nom{
     font-weight: bold;
 }
-
 .coeur{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    .button-coeur{
-        &__vide{
-            @include coeur_size;
-            &:hover{
-                display: none;
-            }
-        }
-        &__plein{
-            @include coeur_size;
-            
-            display: none;
-            &:hover{
-                @include coeur-pink;
-                display: block;
-                -webkit-animation: slide-top 1000ms ease-in-out both;
-                        animation: slide-top 1000ms ease-in-out both;
-            }
-        }
+    width: 32px;
+    height: 32px;
+    margin: 20px 0 0 20px;
+    background: url(img/coeur.png)no-repeat;
+    animation: opacity 100ms ease both;
+    &:hover, :active, :focus{
+        background: url(img/coeur_plein.png)no-repeat;
+        animation: scale-in-center 1000ms ease-in-out both;
     }
-}
+}       
 
-  @-webkit-keyframes slide-top {
+@keyframes scale-in-center {
     0% {
-      transform: translateY(0);
+      transform: scale(0);
+      opacity: 1;
     }
     100% {
-      transform: translateY(-100px);
+      transform: scale(1);
+      opacity: 1;
     }
   }
 
-  @keyframes slide-top {
-    0% {
-      transform: translateY(0);
-    }
-    100% {
-      transform: translateY(-100px);
-    }
+  @keyframes opacity {
+      100% {
+          opacity: 1;
+      }
+      0%{
+          opacity: 0;
+      }
   }
-  
-
-//footer
-
