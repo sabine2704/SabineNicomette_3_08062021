@@ -47,7 +47,7 @@ td, th {
 
 @font-face {
   font-family: "shrikhand";
-  src: url(fonts/Shrikhand/Shrikhand-Regular.ttf);
+  src: url(/SASS/fonts/Shrikhand/Shrikhand-Regular.ttf);
 }
 
 @font-face {
