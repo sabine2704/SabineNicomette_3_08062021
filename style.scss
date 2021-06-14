@@ -6,175 +6,199 @@
 @import "layout/body";
 @import "layout/header";
 @import "layout/footer";
+@import "layout/main";
 
 
 
 
-.localisation{
-    max-width: 375px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: darken($color-fond, 10%);
-    box-shadow: inset 0 6px 9px -6px rgba(78, 75, 75, 0.5);
-    color: $color-ifont;
-}
 
-.presentation{
-    background-color: $color-fond;
+.nom_restaurant{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: 1.25em;
-    text-align: center;
-    h2{
-        max-width: 280px;
-        margin-bottom: 20px;
+    .img_restaurant{
+        max-width: 375px;
+        max-height: 250px;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
-    .button__explore{
-       @include button_form;
-       @include button_colorpink;
-       @include shadow;
-       &:hover{
-        opacity: 0.85;
-        @include shadow_darken;
+    figcaption{
+        display: flex;
+        height: 100px;
+        align-items: center;
+        background: $color-fond;
+        border-radius: 25px 25px 0 0;
+        margin-top: -25px;
+        z-index: 2;
+        position: relative;
+        h2{
+            width: 100%;
+            font-family: "shrikhand";
+            padding-left: 20px;
+            font-size: 1.4em;
+        }    
+        .coeur{
+            margin: 0 20px 0 0;
+            width: 52px;
         }
     }
 }
 
-.fonctionnement{
-    padding: 60px 20px;
-    h2{
-        margin-bottom: 30px;
-    }
-}
-.button__number{
-    @include button_form_number;
-    position: absolute;
-    z-index: 1;
-    margin-top: 25px;
-}
-
-.button__function{
-    display: flex;
-    align-items: center;
-    @include button_form;
-    @include button_colorgris;
-    @include shadow;
-    color: black;
-    margin: 0 0 30px 10px;
-    padding: 25px;
-    position: initial;
-    &:hover{
-        background: lightness($color-fond);
-        @include shadow_darken;
-        i{
-            color: $color-primary;
-        }
-    }
-    i{
-        margin-left: 25px;
-        margin-right: 20px;
-        color: $color-ifont;
-    }
-    p{
-        font-weight: bold;
-    }
- }
-
-.restaurants{
-    max-width: 375px;
-    width: 100%;
-    padding: 60px 20px;
+.menu{
+    padding-top: 50px;
     background: $color-fond;
-    a{
-        text-decoration: none;
-        color: black;
-    }
+    padding-left: 20px;
 }
 
-.bloc_restaurants{
-    margin-top: 30px;
+.titre_menu{
+    text-transform: uppercase;
+    border-bottom: 3px solid $color-tertiary;
+    width: 40px;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+.section_entrees{
+    margin-top: 40px;
+}
+
+.bloc_menu{
     max-width: 335px;
     width: 100%;
-    max-height: 1060px;
-    height: 100%;
+    height: 230px;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    grid-row-gap: 20px;
-    .vignette{
-        max-width: 335px;
-        max-height: 250px;
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr;
-        @include shadow;
-        border-radius: 25px;
-        background: white;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-row-gap: 10px;
+}
+
+.plat{
+    max-width: 335px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 285px 50px;
+    align-self: center;
+    height: 100%;
+    @include shadow;
+    background: white;
+    border-radius: 10px;
+    .nom_plat{
+        width: 98%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 10px 0 10px 10px;
+        .titre{
+            width: 280px;
+            font-weight: bold;
+            font-size: 1.1em;
+            width: 100%;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space:nowrap;
+        }
+        .sous-titre{
+            width: 280px;
+            width: 100%;
+            font-size: 0.9em;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space:nowrap;
+        }
     }
 }
-   
-.image{ 
+
+.case{
+    max-height: 70px;
+    width: 40px;
+    height: 100%; 
     display: flex;
-    img{
-        max-width: 335px;
-        width: 335px;
-        max-height: 175px;
-        -o-object-fit: cover;
-           object-fit: cover;
-        border-radius: 25px 25px 0 0;
-        z-index: 1;
+    &:hover{
+        animation: slide-left 1s both;
+        width: 100px;
+        .button__check{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .fas{
+                animation: rotate-left 1s both;
+                margin: 0;
+            }
+        }
     }
-    .button_new{
-        width: 80px;
-        height: 30px;
-        position: absolute;
-        z-index: 2;
-        margin-left: 240px;
-        margin-top: 20px;
-        color: darken($color-tertiary, 40%);
-        background: $color-tertiary;
+    .prix{
+        width: 40px;
+        font-weight: bold;
+        align-self: flex-end;
+        display: flex;
+        justify-content: center;
+        font-size: 0.9em;
+        padding: 10px 0;
+    }
+}
+
+.button__check{
+    display: none;
+    max-height: 70px;
+    width: 60px;
+    height: 100%; 
+    background: $color-tertiary;
+    padding: 0;
+    color: white;
+    font-size: 1.5em;
+    border-radius: 0 10px 10px 0;
+}
+
+@keyframes slide-left {
+    0% {
+      transform: translateX(0px);
+    }
+    100% {
+      transform: translateX(-50px);
+    }
+  }
+
+  @keyframes rotate-left {
+    0% {
+      transform: rotate(0);
+      transform-origin: center;
+    }
+    100% {
+      transform: rotate(360deg);
+      transform-origin: center;
+    }
+  }
+
+.commande{
+    padding: 50px 0;
+    background: $color-fond;
+    display: flex;
+    justify-content: center;
+    .button__commande{
+        width: 185px;
+        height: 50px;
+        @include button_colorpink;
+        @include shadow;
+        @include button_form;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 0.9em;
-        font-weight: 500;
-        border-radius: 4px;
+        &:hover{
+            opacity: 0.85;
+            @include shadow_darken;
+        }
     }
 }
 
-.description{
-    max-width: 375px;
-    width: 100%;
-    height: 100%;
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-    grid-template-rows: 1fr;
-}
-.texte{
-    max-height: 75px;
-    margin-left: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-p{
-    margin: 0;
-}
-.nom{
-    font-weight: bold;
-}
 .coeur{
     width: 32px;
     height: 32px;
     margin: 20px 0 0 20px;
-    background: url(img/coeur.png)no-repeat;
+    background: url(img/coeur_noir.png)no-repeat;
     animation: opacity 100ms ease both;
     &:hover, :active, :focus{
-        background: url(img/coeur_plein.png)no-repeat;
-        animation: scale-in-center 1000ms ease-in-out both;
+        background: url(img/coeur_rose.png)no-repeat;
+        animation: scale-in-center 400ms ease-in-out both;
     }
 }       
 
@@ -187,13 +211,13 @@ p{
       transform: scale(1);
       opacity: 1;
     }
-  }
+}
 
-  @keyframes opacity {
-      100% {
-          opacity: 1;
-      }
-      0%{
-          opacity: 0;
-      }
-  }
+@keyframes opacity {
+    100% {
+        opacity: 1;
+    }
+    0%{
+        opacity: 0;
+    }
+}

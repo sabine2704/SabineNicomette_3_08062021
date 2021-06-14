@@ -517,19 +517,298 @@ p {
   font-weight: bold;
 }
 
+.nom_restaurant {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.nom_restaurant .img_restaurant {
+  max-width: 375px;
+  max-height: 250px;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.nom_restaurant figcaption {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #F6F6F6;
+  border-radius: 25px 25px 0 0;
+  margin-top: -25px;
+  z-index: 2;
+  position: relative;
+}
+
+.nom_restaurant figcaption h2 {
+  width: 100%;
+  font-family: "shrikhand";
+  padding-left: 20px;
+  font-size: 1.4em;
+}
+
+.nom_restaurant figcaption .coeur {
+  margin: 0 20px 0 0;
+  width: 52px;
+}
+
+.menu {
+  padding-top: 50px;
+  background: #F6F6F6;
+  padding-left: 20px;
+}
+
+.titre_menu {
+  text-transform: uppercase;
+  border-bottom: 3px solid #99E2D0;
+  width: 40px;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+
+.section_entrees {
+  margin-top: 40px;
+}
+
+.bloc_menu {
+  max-width: 335px;
+  width: 100%;
+  height: 230px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+  grid-row-gap: 10px;
+}
+
+.plat {
+  max-width: 335px;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 285px 50px;
+      grid-template-columns: 285px 50px;
+  -ms-grid-row-align: center;
+      align-self: center;
+  height: 100%;
+  -webkit-box-shadow: 1px 1px 12px #dddddd;
+          box-shadow: 1px 1px 12px #dddddd;
+  background: white;
+  border-radius: 10px;
+}
+
+.plat .nom_plat {
+  width: 98%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 10px 0 10px 10px;
+}
+
+.plat .nom_plat .titre {
+  width: 280px;
+  font-weight: bold;
+  font-size: 1.1em;
+  width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.plat .nom_plat .sous-titre {
+  width: 280px;
+  width: 100%;
+  font-size: 0.9em;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.case {
+  max-height: 70px;
+  width: 40px;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.case:hover {
+  -webkit-animation: slide-left 1s both;
+          animation: slide-left 1s both;
+  width: 100px;
+}
+
+.case:hover .button__check {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.case:hover .button__check .fas {
+  -webkit-animation: rotate-left 1s both;
+          animation: rotate-left 1s both;
+  margin: 0;
+}
+
+.case .prix {
+  width: 40px;
+  font-weight: bold;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 0.9em;
+  padding: 10px 0;
+}
+
+.button__check {
+  display: none;
+  max-height: 70px;
+  width: 60px;
+  height: 100%;
+  background: #99E2D0;
+  padding: 0;
+  color: white;
+  font-size: 1.5em;
+  border-radius: 0 10px 10px 0;
+}
+
+@-webkit-keyframes slide-left {
+  0% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+  100% {
+    -webkit-transform: translateX(-50px);
+            transform: translateX(-50px);
+  }
+}
+
+@keyframes slide-left {
+  0% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+  100% {
+    -webkit-transform: translateX(-50px);
+            transform: translateX(-50px);
+  }
+}
+
+@-webkit-keyframes rotate-left {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+    -webkit-transform-origin: center;
+            transform-origin: center;
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+    -webkit-transform-origin: center;
+            transform-origin: center;
+  }
+}
+
+@keyframes rotate-left {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+    -webkit-transform-origin: center;
+            transform-origin: center;
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+    -webkit-transform-origin: center;
+            transform-origin: center;
+  }
+}
+
+.commande {
+  padding: 50px 0;
+  background: #F6F6F6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.commande .button__commande {
+  width: 185px;
+  height: 50px;
+  background: linear-gradient(170deg, #FF79DA 6%, #9356DC 100%);
+  -webkit-box-shadow: 1px 1px 12px #dddddd;
+          box-shadow: 1px 1px 12px #dddddd;
+  border-radius: 25px;
+  padding: 15px;
+  color: white;
+  font-size: 1em;
+  font-weight: 500;
+  margin: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.commande .button__commande:hover {
+  opacity: 0.85;
+  -webkit-box-shadow: 1px 1px 12px #aaaaaa;
+          box-shadow: 1px 1px 12px #aaaaaa;
+}
+
 .coeur {
   width: 32px;
   height: 32px;
   margin: 20px 0 0 20px;
-  background: url(img/coeur.png) no-repeat;
+  background: url(img/coeur_noir.png) no-repeat;
   -webkit-animation: opacity 100ms ease both;
           animation: opacity 100ms ease both;
 }
 
 .coeur:hover, .coeur :active, .coeur :focus {
-  background: url(img/coeur_plein.png) no-repeat;
-  -webkit-animation: scale-in-center 1000ms ease-in-out both;
-          animation: scale-in-center 1000ms ease-in-out both;
+  background: url(img/coeur_rose.png) no-repeat;
+  -webkit-animation: scale-in-center 400ms ease-in-out both;
+          animation: scale-in-center 400ms ease-in-out both;
 }
 
 @-webkit-keyframes scale-in-center {
