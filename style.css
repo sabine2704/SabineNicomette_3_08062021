@@ -527,7 +527,7 @@ p {
           flex-direction: column;
 }
 
-.nom_restaurant .img_restaurant {
+.nom_restaurant .img_restaurant img {
   max-width: 375px;
   max-height: 250px;
   width: 100%;
@@ -564,7 +564,7 @@ p {
 }
 
 .menu {
-  padding-top: 50px;
+  padding-bottom: 50px;
   background: #F6F6F6;
   padding-left: 20px;
 }
@@ -575,10 +575,6 @@ p {
   width: 40px;
   padding-bottom: 5px;
   margin-bottom: 15px;
-}
-
-.section_entrees {
-  margin-top: 40px;
 }
 
 .bloc_menu {
@@ -607,6 +603,17 @@ p {
 .bloc_menu .plat--3 {
   -webkit-animation: slide-top 1000ms ease-in-out both;
           animation: slide-top 1000ms ease-in-out both;
+}
+
+.bloc_menu .plat--4 {
+  -webkit-animation: slide-top 1200ms ease-in-out both;
+          animation: slide-top 1200ms ease-in-out both;
+}
+
+.bloc_note_enchantee {
+  height: 310px;
+  -ms-grid-rows: 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr;
 }
 
 .plat {
@@ -794,7 +801,7 @@ p {
 }
 
 .commande {
-  padding: 50px 0;
+  padding-bottom: 50px;
   background: #F6F6F6;
   display: -webkit-box;
   display: -ms-flexbox;

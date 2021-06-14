@@ -15,7 +15,7 @@
 .nom_restaurant{
     display: flex;
     flex-direction: column;
-    .img_restaurant{
+    .img_restaurant img{
         max-width: 375px;
         max-height: 250px;
         width: 100%;
@@ -45,7 +45,7 @@
 }
 
 .menu{
-    padding-top: 50px;
+    padding-bottom: 50px;
     background: $color-fond;
     padding-left: 20px;
 }
@@ -56,10 +56,6 @@
     width: 40px;
     padding-bottom: 5px;
     margin-bottom: 15px;
-}
-
-.section_entrees{
-    margin-top: 40px;
 }
 
 .bloc_menu{
@@ -79,6 +75,14 @@
     .plat--3{
         animation: slide-top 1000ms ease-in-out both;
     }
+    .plat--4{
+        animation: slide-top 1200ms ease-in-out both;
+    }
+}
+
+.bloc_note_enchantee{
+    height: 310px;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
 }
 
 .plat{
@@ -188,7 +192,7 @@
 }
 
 .commande{
-    padding: 50px 0;
+    padding-bottom: 50px;
     background: $color-fond;
     display: flex;
     justify-content: center;
