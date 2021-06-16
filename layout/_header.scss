@@ -5,6 +5,16 @@ header{
     position: relative;
     display: flex;
     align-items: center;
+    @media #{$small-up} {
+        max-width: $small;
+        width: 100%;
+    }
+    @media #{$medium-up} {
+        width: 100%;
+    }
+    @media #{$large-up} {
+        width: 100%;
+    }
     .retour{
         width: 100%;
         color: black;

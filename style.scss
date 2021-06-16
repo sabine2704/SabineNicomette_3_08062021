@@ -21,6 +21,18 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+        @media #{$small-up} {
+            max-width: $small;
+            width: 100%;
+        }
+        @media #{$medium-up} {
+            max-width: $large;
+            width: 100%;
+        }
+        @media #{$large-up} {
+            max-width: 100%;
+            width: 100%;
+        }
     }
     figcaption{
         display: flex;
@@ -44,10 +56,18 @@
     }
 }
 
+.page_menu{
+    @media #{$large-up} {
+        max-width: 100%;
+        width: 100%;
+        display: flex;
+    }
+}
+
 .menu{
     padding-bottom: 50px;
     background: $color-fond;
-    padding-left: 20px;
+    padding: 0 20px;
 }
 
 .titre_menu{
@@ -59,7 +79,7 @@
 }
 
 .bloc_menu{
-    max-width: 335px;
+    max-width: 375px;
     width: 100%;
     height: 230px;
     display: grid;
@@ -78,6 +98,18 @@
     .plat--4{
         animation: slide-top 1200ms ease-in-out both;
     }
+    @media #{$small-up} {
+        max-width: $small;
+        width: 100%;
+    }
+    @media #{$medium-up} {
+        max-width: $large;
+        width: 100%;
+    }
+    @media #{$large-up} {
+        max-width: 100%;
+        width: 100%;
+    }
 }
 
 .bloc_note_enchantee{
@@ -88,19 +120,31 @@
 .plat{
     max-width: 335px;
     width: 100%;
-    display: grid;
-    grid-template-columns: 285px 50px;
+    display: flex;
     align-self: center;
     height: 100%;
     @include shadow;
     background: white;
     border-radius: 10px;
+    &:hover{
+        .case{
+            cursor: pointer;
+        }
+        .nom_plat{
+            width: 100%;
+        }
+    }
     .nom_plat{
         width: 98%;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         padding: 10px 0 10px 10px;
+        &:hover {
+            width: 80%;
+            transition-property: width;
+            transition-duration: 1s;
+        }
         .titre{
             width: 280px;
             font-weight: bold;
@@ -119,47 +163,74 @@
             white-space:nowrap;
         }
     }
-}
-
-.case{
-    max-height: 70px;
-    width: 40px;
-    height: 100%; 
-    display: flex;
-    &:hover{
-        animation: slide-left 1s both;
-        width: 100px;
-        .button__check{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            .fas{
-                animation: rotate-left 1s both;
-                margin: 0;
+    .case{
+        width: 40px;
+        height: 100%; 
+        display: flex;
+        &:hover{
+            .prix{
+                animation: slide-left 1s both; 
+            }
+            .button__check{
+                opacity: 1;
+                animation: slide-left 1s both;
+                width: 60px;
+                margin-right: -60px;
+                .fas{
+                    animation: rotate-left 1s both;
+                    margin: 0;
+                    display: flex;
+                    justify-content: center;
+                }
             }
         }
+        .prix{
+            width: 40px;
+            font-weight: bold;
+            align-self: flex-end;
+            display: flex;
+            justify-content: center;
+            font-size: 0.9em;
+            padding: 10px 0;
+            &:hover{
+                animation: slide-left 1s both;
+            }
+        }
+        .button__check{
+            display: flex;
+            
+            align-items: center;
+            justify-content: center;
+            max-height: 70px;
+            width: 0px;
+            height: 100%; 
+            background: $color-tertiary;
+            padding: 0;
+            color: white;
+            font-size: 1.5em;
+            border-radius: 0 10px 10px 0;
+            opacity: 0;
+        }
     }
-    .prix{
-        width: 40px;
-        font-weight: bold;
-        align-self: flex-end;
-        display: flex;
-        justify-content: center;
-        font-size: 0.9em;
-        padding: 10px 0;
+    @media #{$small-up} {
+        max-width: $small;
+        width: 100%;
+    }
+    @media #{$medium-up} {
+        max-width: $large;
+        width: 100%;
+    }
+    @media #{$large-up} {
+        max-width: 100%;
+        width: 100%;
     }
 }
 
-.button__check{
-    display: none;
-    max-height: 70px;
-    width: 60px;
-    height: 100%; 
-    background: $color-tertiary;
-    padding: 0;
-    color: white;
-    font-size: 1.5em;
-    border-radius: 0 10px 10px 0;
+.section_plats{
+    padding: 50px 20px;
+    @media #{$large-up} {
+        padding: 0;
+    }
 }
 
 @keyframes slide-top {
@@ -176,7 +247,7 @@
       transform: translateX(0px);
     }
     100% {
-      transform: translateX(-50px);
+      transform: translateX(-60px);
     }
 }
 
@@ -191,8 +262,11 @@
     }
 }
 
+
+  
+
 .commande{
-    padding-bottom: 50px;
+    padding: 50px 0;
     background: $color-fond;
     display: flex;
     justify-content: center;
@@ -209,37 +283,5 @@
             opacity: 0.85;
             @include shadow_darken;
         }
-    }
-}
-
-.coeur{
-    width: 32px;
-    height: 32px;
-    margin: 20px 0 0 20px;
-    background: url(img/coeur_noir.png)no-repeat;
-    animation: opacity 100ms ease both;
-    &:hover, :active, :focus{
-        background: url(img/coeur_rose.png)no-repeat;
-        animation: scale-in-center 400ms ease-in-out both;
-    }
-}       
-
-@keyframes scale-in-center {
-    0% {
-      transform: scale(0);
-      opacity: 1;
-    }
-    100% {
-      transform: scale(1);
-      opacity: 1;
-    }
-}
-
-@keyframes opacity {
-    100% {
-        opacity: 1;
-    }
-    0%{
-        opacity: 0;
     }
 }

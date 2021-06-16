@@ -7,6 +7,21 @@
     background-color: darken($color-fond, 10%);
     box-shadow: inset 0 6px 9px -6px rgba(78, 75, 75, 0.5);
     color: $color-ifont;
+    i{
+        margin-right: 0.7em;
+    }
+    @media #{$small-up} {
+        max-width: $small;
+        width: 100%;
+    }
+    @media #{$medium-up} {
+        max-width: $large;
+        width: 100%;
+    }
+    @media #{$large-up} {
+        max-width: 100%;
+        width: 100%;
+    }
 }
 
 .presentation{
@@ -19,6 +34,12 @@
     h2{
         max-width: 280px;
         margin-bottom: 20px;
+        @media #{$small-up} {
+            max-width: $small;
+        }
+        @media #{$medium-up} {
+            max-width: $large;
+        }
     }
     .button__explore{
        @include button_form;
@@ -31,51 +52,77 @@
     }
 }
 
-.fonctionnement{
-    padding: 60px 20px;
-    h2{
-        margin-bottom: 30px;
-    }
-}
-.button__number{
-    @include button_form_number;
-    position: absolute;
-    z-index: 1;
-    margin-top: 25px;
+.fonctions{ 
+    padding: 50px 20px;
 }
 
-.button__function{
-    display: flex;
-    align-items: center;
-    @include button_form;
-    @include button_colorgris;
-    @include shadow;
-    color: black;
-    margin: 0 0 30px 10px;
-    padding: 25px;
-    position: initial;
-    &:hover{
-        background: lightness($color-fond);
-        @include shadow_darken;
-        i{
-            color: $color-primary;
+.fonctionnement{
+    
+    @media #{$large-up} {
+        display: flex;
+        column-gap: 20px;
+    }
+    .ensemble{
+        max-width: 335px;
+        width: 100%;
+        height: 70px;
+        margin-top: 30px;
+        @media #{$small-up} {
+            max-width: $small;
         }
+        @media #{$medium-up} {
+            max-width: $large;
+        }
+        .button__number{
+            @include button_form_number;
+            position: absolute;
+            z-index: 1;
+            margin-top: 22px;
+        }
+        .button__function{
+            display: flex;
+            align-items: center;
+            @include button_form;
+            @include button_colorgris;
+            @include shadow;
+            color: black;
+            margin: 0 0 30px 10px;
+            padding: 25px;
+            position: initial;
+            &:hover{
+                background: lightness($color-fond);
+                @include shadow_darken;
+                i{
+                    color: $color-primary;
+                }
+            }
+            i{
+                margin-left: 25px;
+                margin-right: 20px;
+                color: $color-ifont;
+            }
+            p{
+                font-weight: bold;
+            }
+         }
     }
-    i{
-        margin-left: 25px;
-        margin-right: 20px;
-        color: $color-ifont;
-    }
-    p{
-        font-weight: bold;
-    }
- }
+}
 
 .restaurants{
     max-width: 375px;
     width: 100%;
     padding: 60px 20px;
     background: $color-fond;
+    @media #{$small-up} {
+        max-width: $small;
+    }
+    @media #{$medium-up} {
+        max-width: $large;
+    }
+    @media #{$large-up} {
+        max-width: 100%;
+        width: 100%;
+    }
     a{
         text-decoration: none;
         color: black;
@@ -91,7 +138,20 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
-    grid-row-gap: 20px;
+    grid-row-gap: 30px;
+    @media #{$small-up} {
+        max-width: $small;
+    }
+    @media #{$medium-up} {
+        max-width: $large;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-column-gap: 30px;
+    }
+    @media #{$large-up} {
+        max-width: 100%;
+        width: 100%;
+    }
     .vignette{
         max-width: 335px;
         max-height: 250px;
@@ -101,11 +161,28 @@
         @include shadow;
         border-radius: 25px;
         background: white;
+        @media #{$small-up} {
+            max-width: $small;
+            width: 100%;
+        }
+        @media #{$medium-up} {
+            max-width: $large;
+            width: 100%;
+        }
+        @media #{$large-up} {
+            max-width: 100%;
+            width: 100%;
+        }
+        &:hover{
+            transform: scale(1.05);
+            transition: 1s;
+        }
     }
 }
    
 .image{ 
     display: flex;
+    justify-content: flex-end;
     img{
         max-width: 335px;
         width: 335px;
@@ -114,14 +191,26 @@
            object-fit: cover;
         border-radius: 25px 25px 0 0;
         z-index: 1;
+        @media #{$small-up} {
+            max-width: $small;
+            width: 100%;
+        }
+        @media #{$medium-up} {
+            max-width: $large;
+            width: 100%;
+        }
+        @media #{$large-up} {
+            max-width: 100%;
+            width: 100%;
+        }
     }
     .button_new{
         width: 80px;
         height: 30px;
         position: absolute;
         z-index: 2;
-        margin-left: 240px;
-        margin-top: 20px;
+        margin-right: 1.25em;
+        margin-top: 1.25em;
         color: darken($color-tertiary, 40%);
         background: $color-tertiary;
         display: flex;
@@ -140,6 +229,14 @@
     display: grid;
     grid-template-columns: 3fr 1fr;
     grid-template-rows: 1fr;
+    @media #{$small-up} {
+        max-width: $small;
+        width: 100%;
+    }
+    @media #{$medium-up} {
+        max-width: $large;
+        width: 100%;
+    }
 }
 .texte{
     max-height: 75px;
@@ -153,4 +250,39 @@ p{
 }
 .nom{
     font-weight: bold;
+}
+
+
+.coeur{
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    background: url(img/coeur_noir.png)no-repeat;
+    animation: opacity 100ms ease both;
+    &:hover, :active, :focus{
+        background: url(img/coeur_rose.png)no-repeat;
+        animation: scale-in-center 400ms ease-in-out both;
+    }
+}       
+
+@keyframes scale-in-center {
+    0% {
+      transform: scale(0);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+}
+
+@keyframes opacity {
+    100% {
+        opacity: 1;
+    }
+    0%{
+        opacity: 0;
+    }
 }

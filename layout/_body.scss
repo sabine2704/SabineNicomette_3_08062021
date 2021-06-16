@@ -4,6 +4,18 @@ body, header, main, section, footer {
     margin: 0;
     padding: 0;
     position: relative;
+    @media #{$small-up} {
+        max-width: $small;
+        width: 100%;
+    }
+    @media #{$medium-up} {
+        max-width: $large;
+        width: 100%;
+    }
+    @media #{$large-up} {
+        max-width: 100%;
+        width: 100%;
+    }
 }
 
 body{
@@ -20,10 +32,6 @@ h2{
     font-family: "roboto";
     font-size: 1.5em;
     font-weight: bold;
-}
-
-i{
-    margin-right: 0.7em;
 }
 
 .button__fonction{
