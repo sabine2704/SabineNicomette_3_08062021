@@ -787,13 +787,13 @@ p {
   justify-self: center;
   background: url(img/coeur_noir.png) no-repeat;
   -webkit-animation: opacity 100ms ease both;
-          animation: opacity 100ms ease both;
+  animation: opacity 100ms ease both;
 }
 
 .coeur:hover, .coeur :active, .coeur :focus {
   background: url(img/coeur_rose.png) no-repeat;
   -webkit-animation: scale-in-center 400ms ease-in-out both;
-          animation: scale-in-center 400ms ease-in-out both;
+  animation: scale-in-center 400ms ease-in-out both;
 }
 
 @-webkit-keyframes scale-in-center {
