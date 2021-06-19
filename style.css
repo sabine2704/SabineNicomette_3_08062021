@@ -942,6 +942,7 @@ p {
   -ms-grid-rows: 1fr 1fr 1fr;
       grid-template-rows: 1fr 1fr 1fr;
   grid-row-gap: 10px;
+  overflow: hidden;
 }
 
 .bloc_menu .plat--1 {
@@ -993,17 +994,46 @@ p {
 
 .plat {
   max-width: 335px;
-  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-item-align: center;
-      align-self: center;
-  height: 100%;
+  background-color: white;
   -webkit-box-shadow: 1px 1px 12px #dddddd;
           box-shadow: 1px 1px 12px #dddddd;
-  background: white;
+  padding: 10px;
   border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  height: 100%;
+}
+
+@media only screen and (max-width: 767px) {
+  .plat {
+    max-width: 767px;
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .plat {
+    max-width: 1024px;
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .plat {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+.plat:hover .titre {
+  width: 80%;
+}
+
+.plat:hover .sous-titre {
+  width: 80%;
 }
 
 .plat:hover .prix {
@@ -1011,33 +1041,17 @@ p {
   animation: slide-left 1s both;
 }
 
-.plat:hover .prix + .button__check {
+.plat:hover .button__check {
   -webkit-animation: slide-left 1s both;
   animation: slide-left 1s both;
-  width: 60px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
 }
 
-.plat:hover .prix + .button__check .fas {
+.plat:hover .button__check .fas {
   -webkit-animation: rotate-left 1s both;
   animation: rotate-left 1s both;
-  margin: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.plat:hover .prix + .nom_plat {
-  width: 235px;
 }
 
 .plat .nom_plat {
-  width: 295px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1048,85 +1062,59 @@ p {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 10px 0 10px 10px;
+  white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  white-space: nowrap;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 
 .plat .nom_plat .titre {
-  width: 295px;
   font-weight: bold;
   font-size: 1.1em;
-  width: 100%;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-}
-
-.plat .nom_plat .titre:hover {
-  width: 235px;
-  -webkit-transition-property: width;
-  transition-property: width;
-  -webkit-transition-duration: 1s;
-          transition-duration: 1s;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
 }
 
 .plat .nom_plat .sous-titre {
-  width: 295px;
-  width: 100%;
   font-size: 0.9em;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-}
-
-.plat .nom_plat .sous-titre:hover {
-  width: 235px;
-  -webkit-transition-property: width;
-  transition-property: width;
-  -webkit-transition-duration: 1s;
-          transition-duration: 1s;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
 }
 
 .plat .prix {
-  width: 40px;
-  font-weight: bold;
-  -ms-flex-item-align: end;
-      align-self: flex-end;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  font-size: 0.9em;
-  padding: 10px 0;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  padding: 0 10px;
 }
 
 .plat .button__check {
-  display: none;
+  background-color: #99E2D0;
+  width: 60px;
+  margin: -10px -70px -10px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 0px;
-  max-height: 70px;
-  height: 100%;
-  background: #99E2D0;
-  padding: 0;
+  display: flex;
   color: white;
   font-size: 1.5em;
   border-radius: 0 10px 10px 0;
-  margin-right: -60px;
 }
 
 .section_plats {

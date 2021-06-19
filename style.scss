@@ -87,6 +87,7 @@
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     grid-row-gap: 10px;
+    overflow: hidden;
     .plat--1{
     -webkit-animation: slide-top 600ms ease-in-out both;
             animation: slide-top 600ms ease-in-out both;
@@ -124,116 +125,87 @@
 
 .plat{
     max-width: 335px;
-    width: 100%;
     display: flex;
-    align-self: center;
-    height: 100%;
+    background-color: white;
     @include shadow;
-    background: white;
+    padding: 10px;
     border-radius: 10px;
-    &:hover {
+    overflow: hidden;
+    cursor: pointer;
+    height: 100%;
+    @media #{$small-up} {
+        max-width: $small;
+        width: 100%;
+    }
+    @media #{$medium-up} {
+        max-width: $large;
+        width: 100%;
+    }
+    @media #{$large-up} {
+        max-width: 100%;
+        width: 100%;
+    }
+    &:hover{
+        .titre{
+            width: 80%;
+        }
+        .sous-titre{
+            width: 80%;
+        }
         .prix{
             -webkit-animation: slide-left 1s both;
                     animation: slide-left 1s both;
-            + .button__check{
-                -webkit-animation: slide-left 1s both;
-                        animation: slide-left 1s both;
-                width: 60px;
-                display: flex;
-                .fas{
-                    -webkit-animation: rotate-left 1s both;
-                            animation: rotate-left 1s both;
-                    margin: 0;
-                    display: flex;
-                    justify-content: center;
-                }
-            }
-            + .nom_plat{
-                width: 235px;
+        }
+        .button__check{
+            -webkit-animation: slide-left 1s both;
+                    animation: slide-left 1s both;
+            .fas{
+                -webkit-animation: rotate-left 1s both;
+                        animation: rotate-left 1s both;
             }
         }
     }
-    .nom_plat{ 
-        width: 295px;
+    .nom_plat{
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        padding: 10px 0 10px 10px;
+        white-space: nowrap;
         text-overflow: ellipsis;
         overflow: hidden;
-        white-space:nowrap;
+        flex: 1;
         .titre{
-            width: 295px;
             font-weight: bold;
             font-size: 1.1em;
-            width: 100%;
             text-overflow: ellipsis;
             overflow: hidden;
             white-space:nowrap;
-            &:hover{
-                width: 235px;
-                transition-property: width;
-                transition-duration: 1s;
-                text-overflow: ellipsis;
-                overflow: hidden;
-                white-space:nowrap;
-            }
         }
         .sous-titre{
-            width: 295px;
-            width: 100%;
             font-size: 0.9em;
             text-overflow: ellipsis;
             overflow: hidden;
             white-space:nowrap;
-            &:hover {
-                width: 235px;
-                transition-property: width;
-                transition-duration: 1s;
-                text-overflow: ellipsis;
-                overflow: hidden;
-                white-space:nowrap;
-            }
         }
     }
     .prix{
-        width: 40px;
-        font-weight: bold;
-        align-self: flex-end;
         display: flex;
-        justify-content: center;
-        font-size: 0.9em;
-        padding: 10px 0;
+        justify-content: flex-end;
+        align-items: flex-end;
+        padding: 0 10px;
     }
     .button__check{
-        display: none;
+        background-color: $color-tertiary;
+        width: 60px;
+        margin: -10px -70px -10px 0;
+        display: flex;
         align-items: center;
         justify-content: center;
-        width: 0px;
-        max-height: 70px;
-        height: 100%; 
-        background: $color-tertiary;
-        padding: 0;
+        display: flex;
         color: white;
         font-size: 1.5em;
         border-radius: 0 10px 10px 0;
-        margin-right: -60px;
     }
 }
-
-// @media #{$small-up} {
-//     max-width: $small;
-//     width: 100%;
-// }
-// @media #{$medium-up} {
-//     max-width: $large;
-//     width: 100%;
-// }
-// @media #{$large-up} {
-//     max-width: 100%;
-//     width: 100%;
-// }
-
 
 .section_plats{
     padding: 50px 20px;
@@ -299,9 +271,6 @@
       transform-origin: center;
     }
 }
-
-
-  
 
 .commande{
     padding: 50px 0;
