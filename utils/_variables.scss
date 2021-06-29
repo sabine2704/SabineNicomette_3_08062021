@@ -5,12 +5,15 @@ $color-tertiary: #99E2D0;
 $color-footer: #353535;
 $color-fond: #F6F6F6;
 $color-font-footer: white;
+$color-button-function: #f5edff;
 $color-ifont: rgb(133, 130, 130);
 
 // breakpoints
+$xsmall: 375px;
 $small: 767px;
 $medium: 768px;
 $large: 1024px;
+$small-down: "only screen and (max-width: #{$xsmall})";
 $small-up: "only screen and (max-width: #{$small})";
 $medium-up: "only screen and (min-width: #{$medium})";
 $large-up: "only screen and (min-width: #{$large})";

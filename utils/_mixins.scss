@@ -35,14 +35,3 @@
     box-shadow: 1px 1px 12px darken($color_fond, 30%);
 }
 
-@mixin coeur_size{
-    font-size: 1.8em;
-}
-
-@mixin coeur_pink{
-    background: $color-primary;
-    background: radial-gradient(circle at 30% 120%, $color-secondary 20%,$color-secondary 40%, $color-primary 70%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}

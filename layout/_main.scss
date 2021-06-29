@@ -84,14 +84,14 @@
             display: flex;
             align-items: center;
             @include button_form;
-            @include button_colorgris;
             @include shadow;
+            background: $color-button-function;
             color: black;
             margin: 0 0 30px 10px;
             padding: 25px;
             position: initial;
             &:hover{
-                background: lightness($color-fond);
+                background: lightness($color-button-function);
                 @include shadow_darken;
                 i{
                     color: $color-primary;
@@ -254,18 +254,31 @@ p{
 }
 
 .coeur{
-    width: 32px;
-    height: 32px;
+    width: 30px;
+    height: 30px;
     display: flex;
+    position: relative;
     align-self: center;
     justify-self: center;
-    background: url(img/coeur_noir.png)no-repeat;
-    -webkit-animation: opacity 100ms ease both;
-            animation: opacity 100ms ease both;
     &:hover, :active, :focus{
-        background: url(img/coeur_rose.png)no-repeat;
-        -webkit-animation: scale-in-center 400ms ease-in-out both;
-                animation: scale-in-center 400ms ease-in-out both;
+        .coeur_plein{
+            display: block;
+            -webkit-animation: opacity 600ms ease both;
+                    animation: opacity 600ms ease both;
+                    -moz-animation: opacity 600ms ease both;
+        }
+        .coeur_vide{
+            -webkit-animation: scale-in-center 400ms ease-in-out both;
+                    animation: scale-in-center 400ms ease-in-out both;
+                    -moz-animation: scale-in-center 400ms ease-in-out both;
+        }
+    }
+    .coeur_plein{
+        display: none;
+        position: absolute;
+    }
+    .coeur_vide{
+        position: absolute;
     }
 }       
 
@@ -291,6 +304,17 @@ p{
     }
 }
 
+@-moz-keyframes scale-in-center {
+    0% {
+      -moz-transform: scale(0);
+      opacity: 1;
+    }
+    100% {
+      -moz-transform: scale(1);
+      opacity: 1;
+    }
+}
+
 @-webkit-keyframes opacity {
     100% {
         opacity: 1;
@@ -301,6 +325,15 @@ p{
 }
 
 @keyframes opacity {
+    100% {
+        opacity: 1;
+    }
+    0%{
+        opacity: 0;
+    }
+}
+
+@-moz-keyframes opacity {
     100% {
         opacity: 1;
     }
@@ -320,6 +353,10 @@ p{
         height: 100%;
         -o-object-fit: cover;
            object-fit: cover;
+        @media #{$small-down} {
+        max-width: $xsmall;
+        width: 100%;
+        }
         @media #{$small-up} {
             max-width: $small;
             width: 100%;
@@ -382,7 +419,7 @@ p{
     width: 100%;
     height: 230px;
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 100%;
     grid-template-rows: 1fr 1fr 1fr;
     grid-row-gap: 10px;
     overflow: hidden;
@@ -401,6 +438,10 @@ p{
     .plat--4{
         -webkit-animation: slide-top 1200ms ease-in-out both;
                 animation: slide-top 1200ms ease-in-out both;
+    }
+    @media #{$small-down} {
+        max-width: $xsmall;
+        width: 100%;
     }
     @media #{$small-up} {
         max-width: $small;
@@ -423,6 +464,7 @@ p{
 
 .plat{
     max-width: 335px;
+    width: 100%;
     display: flex;
     background-color: white;
     @include shadow;
@@ -431,6 +473,10 @@ p{
     overflow: hidden;
     cursor: pointer;
     height: 100%;
+    @media #{$small-down} {
+        max-width: $xsmall;
+        width: 100%;
+    }
     @media #{$small-up} {
         max-width: $small;
         width: 100%;

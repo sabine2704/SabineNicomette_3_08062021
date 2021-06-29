@@ -185,6 +185,13 @@ body, header, main, section, footer {
   position: relative;
 }
 
+@media only screen and (max-width: 375px) {
+  body, header, main, section, footer {
+    max-width: 375px;
+    width: 100%;
+  }
+}
+
 @media only screen and (max-width: 767px) {
   body, header, main, section, footer {
     max-width: 767px;
@@ -522,9 +529,9 @@ header h1 {
   font-size: 1em;
   font-weight: 500;
   margin: 20px;
-  background: linear-gradient(170deg, #F6F6F6 6%, white 100%);
   -webkit-box-shadow: 1px 1px 12px #dddddd;
           box-shadow: 1px 1px 12px #dddddd;
+  background: #f5edff;
   color: black;
   margin: 0 0 30px 10px;
   padding: 25px;
@@ -777,23 +784,37 @@ p {
 }
 
 .coeur {
-  width: 32px;
-  height: 32px;
+  width: 30px;
+  height: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: relative;
   -ms-flex-item-align: center;
       align-self: center;
   justify-self: center;
-  background: url(img/coeur_noir.png) no-repeat;
-  -webkit-animation: opacity 100ms ease both;
-  animation: opacity 100ms ease both;
 }
 
-.coeur:hover, .coeur :active, .coeur :focus {
-  background: url(img/coeur_rose.png) no-repeat;
+.coeur:hover .coeur_plein, .coeur :active .coeur_plein, .coeur :focus .coeur_plein {
+  display: block;
+  -webkit-animation: opacity 600ms ease both;
+  animation: opacity 600ms ease both;
+  -moz-animation: opacity 600ms ease both;
+}
+
+.coeur:hover .coeur_vide, .coeur :active .coeur_vide, .coeur :focus .coeur_vide {
   -webkit-animation: scale-in-center 400ms ease-in-out both;
   animation: scale-in-center 400ms ease-in-out both;
+  -moz-animation: scale-in-center 400ms ease-in-out both;
+}
+
+.coeur .coeur_plein {
+  display: none;
+  position: absolute;
+}
+
+.coeur .coeur_vide {
+  position: absolute;
 }
 
 @-webkit-keyframes scale-in-center {
@@ -857,6 +878,13 @@ p {
   height: 100%;
   -o-object-fit: cover;
   object-fit: cover;
+}
+
+@media only screen and (max-width: 375px) {
+  .nom_restaurant .img_restaurant img {
+    max-width: 375px;
+    width: 100%;
+  }
 }
 
 @media only screen and (max-width: 767px) {
@@ -937,8 +965,8 @@ p {
   height: 230px;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
+  -ms-grid-columns: 100%;
+      grid-template-columns: 100%;
   -ms-grid-rows: 1fr 1fr 1fr;
       grid-template-rows: 1fr 1fr 1fr;
   grid-row-gap: 10px;
@@ -963,6 +991,13 @@ p {
 .bloc_menu .plat--4 {
   -webkit-animation: slide-top 1200ms ease-in-out both;
   animation: slide-top 1200ms ease-in-out both;
+}
+
+@media only screen and (max-width: 375px) {
+  .bloc_menu {
+    max-width: 375px;
+    width: 100%;
+  }
 }
 
 @media only screen and (max-width: 767px) {
@@ -994,6 +1029,7 @@ p {
 
 .plat {
   max-width: 335px;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1005,6 +1041,13 @@ p {
   overflow: hidden;
   cursor: pointer;
   height: 100%;
+}
+
+@media only screen and (max-width: 375px) {
+  .plat {
+    max-width: 375px;
+    width: 100%;
+  }
 }
 
 @media only screen and (max-width: 767px) {

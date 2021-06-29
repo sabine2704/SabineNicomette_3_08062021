@@ -4,6 +4,10 @@ body, header, main, section, footer {
     margin: 0;
     padding: 0;
     position: relative;
+    @media #{$small-down} {
+        max-width: $xsmall;
+        width: 100%;
+    }
     @media #{$small-up} {
         max-width: $small;
         width: 100%;
